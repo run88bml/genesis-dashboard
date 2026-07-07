@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — 07 Jul 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f172a; color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 24px; }
+  h1 { font-size: 22px; font-weight: 700; color: #f8fafc; }
+  h2 { font-size: 13px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
+  .card { background: #1e293b; border-radius: 12px; padding: 20px; }
+  .metric { display: flex; flex-direction: column; gap: 4px; background: #0f172a; border-radius: 8px; padding: 12px; }
+  .metric-value { font-size: 32px; font-weight: 800; }
+  .metric-label { font-size: 12px; color: #64748b; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 8px 4px; font-size: 11px; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #334155; }
+  .freshness { font-size:10px; color:#475569; background:#1e293b; padding:2px 8px; border-radius:999px; font-weight:500; text-transform:none; letter-spacing:0; }
+  .data-stale { color:#fbbf24; background:#1e1b0f; border:1px solid #4d3a0f; }
+  #topnav::-webkit-scrollbar { display:none; }
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .grid { grid-template-columns: 1fr !important; }
+    .metric-value { font-size: 24px; }
+    .row { flex-direction: column; }
+    table { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+  <h1>Dashboard — Nuno Leitao</h1>
+  <span style="font-size:12px;color:#475569">07 Jul 2026 · 22:18 · gerado por Genesis</span>
+</div>
+
+<nav id="topnav" style="position:sticky;top:0;z-index:100;background:#0f172a;border-bottom:1px solid #1e293b;margin:12px -24px 0;padding:0 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none">
+  <a href="#digest" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">Digest</a>
+  <a href="#mba" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">MBA</a>
+  <a href="#linkedin" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">LinkedIn</a>
+  <a href="#training" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">Training</a>
+  <a href="#wellness" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">Wellness</a>
+  <a href="#jobs" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">Jobs</a>
+  <a href="#devscout" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">Dev Scout</a>
+  <a href="#electricidade" style="color:#64748b;text-decoration:none;font-size:12px;font-weight:500;padding:8px 10px;white-space:nowrap;border-bottom:2px solid transparent">Eletricidade</a>
+</nav>
+
+<!-- DAILY DIGEST -->
+<div class="card" id="digest" style="margin-top:24px;border-top:3px solid #0284c7">
+  <h2 style="display:flex;justify-content:space-between;align-items:center">
+    <span>Daily digest</span>
+    <span class="freshness" title="2026-07-05 (2d)">digest: 5 Jul · há 2d</span>
+  </h2>
+  <div class="row" style="gap:32px">
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Sport Finance</div>
+          <ul style="list-style:none"><li style="margin-bottom:8px"><a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/04/global-sports-rights-climb-to-ove-67-billion-in-2026" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">Global Sports Rights Climb to Over $67 Billion in 2026</a>
+            <div style="font-size:11px;color:#475569">S&amp;P Global</div></li><li style="margin-bottom:8px"><a href="https://www.thefourthquarter.co/p/weekly-sports-business-update-july-2-2026" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">Premier Lacrosse League Raises $100M Series E Led by Ares and Joe Tsai</a>
+            <div style="font-size:11px;color:#475569">The Fourth Quarter</div></li><li style="margin-bottom:8px"><a href="https://www.sportbusiness.com/news/" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">Betano Signs New Three-Year Shirt Sponsorship with Tottenham Hotspur</a>
+            <div style="font-size:11px;color:#475569">SportBusiness</div></li></ul>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Sport Management</div>
+          <ul style="list-style:none"><li style="margin-bottom:8px"><a href="https://www.skadden.com/insights/publications/2026/04/englands-new-independent-football-regulator" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">England&#x27;s Independent Football Regulator Goes Live for 2026-27 Season</a>
+            <div style="font-size:11px;color:#475569">Skadden</div></li><li style="margin-bottom:8px"><a href="https://bcrugbynews.com/the-business-of-rugby/" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">Black Knight Rugby Completes First Full American Takeover of a Premiership Rugby Club</a>
+            <div style="font-size:11px;color:#475569">BC Rugby News</div></li><li style="margin-bottom:8px"><a href="https://www.mlssoccer.com/news/major-league-soccer-announces-collaboration-with-datagrail-to-power-ai-driven-data-privacy-and-governance-across-the-league-and-club-partners" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">MLS Partners with DataGrail for AI-Driven Data Governance Across All Clubs</a>
+            <div style="font-size:11px;color:#475569">MLSSoccer.com</div></li></ul>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Tech Trends</div>
+          <ul style="list-style:none"><li style="margin-bottom:8px"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">Claude Sonnet 5 Launches — Strongest Sonnet Yet at $2/M Input Tokens</a>
+            <div style="font-size:11px;color:#475569">Build Fast with AI</div></li><li style="margin-bottom:8px"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">California Signs Landmark Deal Giving All State Agencies Claude Access at 50% Discount</a>
+            <div style="font-size:11px;color:#475569">Build Fast with AI</div></li><li style="margin-bottom:8px"><a href="https://blog.mean.ceo/on-device-ai-news-july-2026/" style="color:#e2e8f0;text-decoration:none;font-size:13px" target="_blank" rel="noopener">On-Device AI Accelerates — AI Runs Locally on Phones, Wearables, and Laptops</a>
+            <div style="font-size:11px;color:#475569">On-Device AI News</div></li></ul>
+        </div></div>
+</div>
+
+<!-- MBA STATUS -->
+<div class="grid" id="mba" style="margin-top:28px;grid-template-columns: 2fr 1fr">
+  <div class="card" style="border-top:3px solid #7c3aed">
+    <h2>MBA — proximas avaliacoes</h2>
+    <table>
+      <thead><tr><th>Disciplina</th><th>Data</th><th style="text-align:center">Dias</th><th>Tipo</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#e2e8f0">Operations & Supply Chain</td>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-07-09</td>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8;text-align:center">2d</td>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">Final Exam (presencial)</td>
+          <td style="padding:6px 4px;font-size:12px"><span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">⚡ URGENTE</span></td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div class="card" style="border-top:3px solid #7c3aed">
+    <h2>MBA — alertas</h2>
+    <ul style="list-style:none"><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">🔴 <strong>Operations & Supply Chain</strong> — exame em 2 dias (9 Jul), prep feito 4 Jul, resumo PDF gerado</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">✅ <strong>Managerial Economics</strong> — avaliação concluída (2 Jul)</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">✅ <strong>Leading & Managing People</strong> — assignment entregue (28 Jun)</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">✅ <strong>Corporate Finance</strong> — concluído (2026-06-27)</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">✅ <strong>Management Accounting and Control</strong> — concluído (2026-06-16)</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">✅ <strong>Corporate Governance & Ethics</strong> — concluído (2026-06-16)</li></ul>
+  </div>
+</div>
+
+<!-- LINKEDIN SUGGESTIONS -->
+<div class="card" id="linkedin" style="margin-top:28px;border-top:3px solid #0c4a6e">
+  <h2 style="display:flex;justify-content:space-between;align-items:center">
+    <span>LinkedIn — sugestoes da semana</span>
+    <span class="freshness" title="2026-07-06 (1d)">posts: 6 Jul · há 1d</span>
+  </h2>
+  
+        <details style="background:#11182a;border:1px solid #263246;border-radius:10px;padding:14px 16px;margin-bottom:10px">
+          <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <span style="font-size:13px;color:#e2e8f0;font-weight:700">England&#x27;s Independent Football Regulator Goes Live</span>
+            <span style="font-size:10px;color:#fff;background:#0c4a6e;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:0.4px;flex-shrink:0">draft</span>
+          </summary>
+          <div style="font-size:12px;color:#94a3b8;font-style:italic;margin-top:8px">116 clubs. One new regulator. A licensing deadline most of them are only beginning to process.</div>
+          <div style="font-size:12px;color:#cbd5e1;line-height:1.55;margin-top:10px">The Independent Football Regulator went live for the 2026-27 season. 116 clubs across five tiers of English men&#x27;s professional football, each needing a provisional operating licence before they can compete in 2027-28. The application window opens 1 November 2026 and closes 26 February 2027.<br><br>The IFR is modelled on the Financial Conduct Authority — a financial regulator&#x27;s logic applied to an industry that self-governed for decades. The trigger was visible long before the Act: Bury FC, Derby County, Wigan Athletic. Clubs that collapsed while the structures meant to catch them didn&#x27;t.<br><br>Two things went live immediately. The ODSE regime — Owners, Directors and Senior Executives — means no one takes ownership or a Senior Management Function at a regulated club without suitability clearance: source of funds, competence, integrity. And the financial framework changes: PSR is replaced by Squad Cost Ratio and a Sustainability and Systemic Resilience framework, now aligned to UEFA standards.<br><br>I spent years running operations in a professional league while regulators were rewriting the rules around us. The framework is never the hard part. What the IFR finds inside those 116 clubs when it actually looks — that&#x27;s the real story.<br><br>#FootballGovernance #SportsBusiness</div>
+          <a href="https://www.skadden.com/insights/publications/2026/04/englands-new-independent-football-regulator" style="display:inline-block;font-size:10px;color:#475569;margin-top:10px;text-decoration:none" target="_blank" rel="noopener">Fonte: England&#x27;s New Independent Football Regulator: Are You on the Ball?</a>
+        </details>
+        <details style="background:#11182a;border:1px solid #263246;border-radius:10px;padding:14px 16px;margin-bottom:10px">
+          <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <span style="font-size:13px;color:#e2e8f0;font-weight:700">Black Knight Completes First American Takeover of a Premiership Rugby Club</span>
+            <span style="font-size:10px;color:#fff;background:#0c4a6e;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:0.4px;flex-shrink:0">draft</span>
+          </summary>
+          <div style="font-size:12px;color:#94a3b8;font-style:italic;margin-top:8px">Exeter Chiefs sold. First full American takeover in Premiership Rugby. The deal structure is straightforward. What follows isn&#x27;t.</div>
+          <div style="font-size:12px;color:#cbd5e1;line-height:1.55;margin-top:10px">The deal closed 30 June. Bill Foley&#x27;s Black Knight — through Cannae Holdings — completed the first 100% American ownership of a Premiership Rugby club. Tony Rowe CBE stays on as CEO. The capital wipes the club&#x27;s remaining debt. The stated plan for next season: spend to the Premiership salary cap.<br><br>That&#x27;s the structure on day one. Foley is a documented multi-sport investor whose background is American franchises. The franchise model he knows is built on stable rosters, fixed geography, and controlled revenue distribution. Premiership Rugby runs on promotion, relegation, a hard salary cap, and club identities built over generations of community rugby in English counties.<br><br>The capital does what capital does: it clears the balance sheet and funds recruitment. The harder question is what happens at month 12, month 24 — when the assumptions imported from the American sports market meet the operational reality of an English rugby club.<br><br>American money has arrived in Premiership Rugby. The interesting part is not the press release.<br><br>#SportsBusiness #PremiershipRugby</div>
+          <a href="https://www.exeterchiefs.co.uk/news/black-knight-rugby-completes-takeover-of-exeter-rugby-group-ltd" style="display:inline-block;font-size:10px;color:#475569;margin-top:10px;text-decoration:none" target="_blank" rel="noopener">Fonte: Black Knight Rugby completes takeover of Exeter Rugby Group Ltd</a>
+        </details><div style="font-size:11px;color:#fbbf24;background:#1e1b0f;border:1px solid #4d3a0f;border-radius:8px;padding:8px 12px;margin-top:6px">🔔 Applied-AI chapter check-in: still gated on your authorization to surface the applied-AI chapter — let me know if that&#x27;s changed.</div>
+</div>
+
+<!-- TRAINING STATUS (big) -->
+<div class="card" id="training" style="margin-top:28px;border-top:3px solid #fb923c">
+  <h2>Training status</h2>
+  
+        <div style="background:#1e293b;border-radius:8px;padding:28px;display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Treino hoje</div>
+            <div style="font-size:40px;font-weight:800;color:#22c55e">VERDE</div>
+          </div>
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:20px;color:#e2e8f0;font-weight:600">interval run</div>
+            <div style="font-size:15px;color:#94a3b8;margin-top:4px">60 min · lunch</div>
+            <div style="font-size:13px;color:#64748b;margin-top:10px">Recovery 80.0% | Sleep 79.0% (6.9h) | Stress 15.0 | HRV ?ms</div>
+          </div>
+        </div>
+  <div style="background:#052e16;border-radius:8px;padding:16px;margin-top:16px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+    <div style="font-size:28px">🏁</div>
+    <div>
+      <div style="font-size:15px;color:#86efac;font-weight:700">Meia-Maratona do Porto</div>
+      <div style="font-size:12px;color:#4ade80;margin-top:2px">13 Set 2026 · 21,1 km</div>
+    </div>
+    <div style="margin-left:auto;text-align:right">
+      <div style="font-size:24px;font-weight:800;color:#86efac">9 semanas</div>
+      <div style="font-size:12px;color:#4ade80">68 dias</div>
+    </div>
+  </div>
+  <div style="margin-top:20px;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px">Agendado no Garmin</div>
+  <div style="margin-top:8px">
+        <div style="display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid #1e293b">
+          <div style="font-size:20px">🏃</div>
+          <div style="flex:1">
+            <div style="font-size:13px;color:#e2e8f0;font-weight:600">Hyundai Porto Half Marathon</div>
+            <div style="font-size:11px;color:#64748b">2026-09-13 · 21.1 km</div>
+          </div>
+        </div></div>
+</div>
+
+<div id="wellness" style="margin-top:32px;border-top:1px solid #1e293b;padding-top:8px">
+  <span style="font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:1px">Status boards</span>
+</div>
+
+<div class="grid">
+
+  <!-- WELLNESS TODAY -->
+  <div class="card" style="border-top:3px solid #22c55e">
+    
+    <h2 style="display:flex;justify-content:space-between;align-items:center">
+      <span>Wellness hoje</span>
+      <span class="freshness" title="2026-07-06 (1d)">sync: 6 Jul · há 1d</span>
+    </h2>
+    <div class="row" style="gap:24px;margin-bottom:16px">
+      <div class="metric">
+        <div class="metric-value" style="color:#22c55e;font-size:40px">80.0<span style="font-size:16px">%</span></div>
+        <div class="metric-label">Recovery</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value" style="color:#a78bfa;font-size:32px">—</div>
+        <div class="metric-label">HRV</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value" style="color:#38bdf8">79.0<span style="font-size:16px">%</span></div>
+        <div class="metric-label">Sono</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value" style="color:#a78bfa">6.9<span style="font-size:16px">h</span></div>
+        <div class="metric-label">Horas sono</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value" style="color:#fb923c">15.0</div>
+        <div class="metric-label">Stress</div>
+      </div>
+    </div>
+    <div style="margin-bottom:6px;font-size:12px;color:#64748b">Recovery</div>
+    <div style="background:#1e293b;border-radius:4px;height:10px;width:200px;display:inline-block;vertical-align:middle"><div style="background:#22c55e;height:10px;border-radius:4px;width:160px"></div></div>
+    
+  </div>
+
+  <!-- TREND CHART -->
+  <div class="card" style="grid-column: span 2">
+    <h2>Tendencia wellness (14 dias)</h2>
+    <canvas id="trendChart" height="80"></canvas>
+  </div>
+
+  <!-- WELLNESS TABLE -->
+  <div class="card">
+    <h2>Ultimos 7 dias</h2>
+    <table>
+      <thead><tr>
+        <th>Data</th><th style="text-align:center">Rec%</th><th style="text-align:center">Sono%</th>
+        <th style="text-align:center">Horas</th><th style="text-align:center">HRV</th>
+        <th style="text-align:center">Stress</th><th>Fonte</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-07-06</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#22c55e;font-weight:600">80.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">79.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">6.9</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">15.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-07-04</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#eab308;font-weight:600">51.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">88.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">7.9</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">23.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-07-01</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#ef4444;font-weight:600">26.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">79.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">7.2</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">28.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-06-29</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#ef4444;font-weight:600">28.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">73.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">5.6</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">24.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-06-28</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#22c55e;font-weight:600">68.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">85.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">7.6</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">20.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-06-27</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#eab308;font-weight:600">66.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">80.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">6.5</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">19.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 4px;font-size:12px;color:#94a3b8">2026-06-26</td>
+          <td style="padding:6px 4px;text-align:center"><span style="color:#eab308;font-weight:600">47.0</span></td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">69.0</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">6.7</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">—</td>
+          <td style="padding:6px 4px;text-align:center;font-size:12px;color:#94a3b8">29.0</td>
+          <td style="padding:6px 4px;font-size:11px;color:#64748b">garmin</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- JOB SCOUT (Diana) ─ always last on the page -->
+<div class="card" id="jobs" style="margin-top:28px;border-top:3px solid #0284c7">
+  <h2 style="display:flex;justify-content:space-between;align-items:center">
+    <span>Job scout</span>
+    <span class="freshness data-stale" title="2026-07-02 (5d)">scout: 2 Jul · há 5d</span>
+  </h2>
+  <table>
+    <thead><tr><th>Role</th><th>Empresa</th><th>Local</th><th>CV Match</th><th>Conviction</th><th>Acao</th></tr></thead>
+    <tbody>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://group.bnpparibas/en/careers/job-offer/head-of-functions-all-genders-oporto-open-ended-contract-hybrid" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Head of Functions</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">BNP Paribas Cardif</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Porto, hybrid</td>
+          <td style="padding:8px 4px"><span style="background:#22c55e;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">85/100</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Yes</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Verify open today — then apply immediately</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://www.uefa.com/about/jobs/job-opportunities/" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Venue Operations — Tournament Operations</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">UEFA</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Nyon, Switzerland (relocation required)</td>
+          <td style="padding:8px 4px"><span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">79/100</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Yes</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Apply now — deadline July 7 (5 days)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://www.uefa.com/about/jobs/job-opportunities/" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Club Competitions Operations &amp; Events</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">UEFA</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Nyon, Switzerland (relocation required)</td>
+          <td style="padding:8px 4px"><span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">78/100</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Yes</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Apply now — deadline July 13</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://www.uefa.com/about/jobs/job-opportunities/" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Events SA</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">UEFA</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Nyon, Switzerland (relocation required)</td>
+          <td style="padding:8px 4px"><span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">75/100</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Maybe</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Apply alongside #2 and #3 — deadline July 10</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://jobs.lever.co/swordhealth/17da0f63-7284-4e82-994d-2612fb5f3a0f" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Chief of Staff, Enterprise</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Sword Health</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Porto/Lisbon, hybrid</td>
+          <td style="padding:8px 4px"><span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">74/100</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Maybe</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Tailor CV first</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://hub.globalsportsjobs.com/vacancy/global-account-director-uk-europe-gb-glap93653" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Global Account Director UK/Europe</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">THE·TEAM (Wasserman)</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Europe remote + US travel</td>
+          <td style="padding:8px 4px"><span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">74/100</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Maybe</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Apply now — confirm Portugal-remote eligibility</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://jobs.lever.co/swordhealth/88eeece8-9d41-466a-8c2e-23d656f846f4" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Chief of Staff to Chief Legal and People Offi</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Sword Health</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Porto/Lisbon, hybrid</td>
+          <td style="padding:8px 4px"><span style="background:#64748b;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">67/100 ⚠</span></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">Borderline</td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Watch</td>
+        </tr></tbody>
+  </table>
+</div>
+
+<!-- DEVELOPMENT SCOUT (Diana, Mode 2) -->
+<div class="card" id="devscout" style="margin-top:28px;border-top:3px solid #0d9488">
+  <h2 style="display:flex;justify-content:space-between;align-items:center">
+    <span>Development scout <span style="text-transform:none;letter-spacing:0;color:#475569;font-weight:500">· cursos &amp; certificações</span></span>
+    <span class="freshness" title="2026-07-07 (0d)">scout: 7 Jul · hoje</span>
+  </h2>
+  <div style="font-size:11px;color:#64748b;margin:-6px 0 14px">Cadência: Semanal · offset do Job Scout (seg/qui)</div>
+  <div style="background:#042f2e;border:1px solid #0f766e;border-radius:8px;padding:16px;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+    <div style="font-size:26px">🎯</div>
+    <div style="flex:1;min-width:240px">
+      <div style="font-size:11px;color:#5eead4;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Top pick</div>
+      <div style="font-size:16px;color:#f1f5f9;font-weight:700">PMP — Project Management Professional (PMI)</div>
+      <div style="font-size:12px;color:#cbd5e1;line-height:1.5;margin-top:6px">Maior sinal e maior efeito composto: converte 13 anos de gestão de programas numa credencial que os recrutadores filtram. Reforça o lane Programme/Senior PM (Porto) e o lane Chief-of-Staff.</div>
+      <div style="font-size:11px;color:#5eead4;margin-top:8px">~500-900 EUR · ~2-4 meses de preparação</div>
+    </div>
+  </div>
+  <div style="margin-top:16px;overflow-x:auto">
+    <table>
+      <thead><tr><th style="text-align:center">#</th><th>Certificação</th><th>Custo</th><th>Esforço</th><th style="text-align:center">ROI</th><th>Recomendação</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#64748b;text-align:center">1</td>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://www.pmi.org/certifications/project-management-pmp" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">PMP (PMI)</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">~500-900 EUR</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">~2-4 meses</td>
+          <td style="padding:8px 4px;text-align:center"><span style="background:#22c55e;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">Alto</span></td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Inscrever este trimestre</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#64748b;text-align:center">2</td>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://www.scrum.org/assessments/professional-scrum-master-i-certification" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">PSM I (Scrum.org)</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">~185 EUR</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">~2-4 semanas</td>
+          <td style="padding:8px 4px;text-align:center"><span style="background:#22c55e;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">Alto</span></td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Quick win — fazer primeiro</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 4px;font-size:12px;color:#64748b;text-align:center">3</td>
+          <td style="padding:8px 4px;font-size:12px;color:#e2e8f0"><a href="https://iassc.org/six-sigma-certification/green-belt-certification/" style="color:#38bdf8;text-decoration:none" target="_blank" rel="noopener">Lean Six Sigma Green Belt (IASSC)</a></td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">~350-650 EUR</td>
+          <td style="padding:8px 4px;font-size:12px;color:#94a3b8">~4-8 semanas</td>
+          <td style="padding:8px 4px;text-align:center"><span style="background:#3b82f6;color:#fff;padding:2px 8px;border-radius:999px;font-size:11px">Medio-alto</span></td>
+          <td style="padding:8px 4px;font-size:11px;color:#64748b">Só se o pipeline confirmar tilt GBS/shared-services</td>
+        </tr></tbody>
+    </table>
+  </div>
+  <div style="margin-top:16px;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Sequenciação recomendada</div>
+  <ul style="list-style:none"><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">1. PSM I agora — barato, rápido, keyword imediata no CV</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">2. PMP dentro do trimestre — o prémio real; começar a prep de 35h em paralelo</li><li style="font-size:12px;color:#cbd5e1;margin-bottom:6px">3. Green Belt só se o pipeline de candidaturas justificar</li></ul>
+  <div style="font-size:12px;color:#94a3b8;margin-top:10px">Se só um: <strong style="color:#5eead4">PMP — maior sinal e maior efeito composto face à experiência (não-credenciada) existente.</strong></div>
+  <div style="font-size:10px;color:#475569;margin-top:12px">Análise completa: Owners Inbox/Career/development-scout-2026-07-07.md (repo genesis)</div>
+</div>
+
+<!-- ELECTRICIDADE -->
+<div class="card" id="electricidade" style="margin-top:28px;border-top:3px solid #0369a1">
+  <h2>⚡ Electricidade — Junho 2026</h2>
+  <div class="elec-metrics" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px">
+    <div style="background:#0f172a;border-radius:8px;padding:12px">
+      <div style="font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Consumo total</div>
+      <div style="font-size:26px;font-weight:800;color:#f1f5f9">243,5 <span style="font-size:14px">kWh</span></div>
+      <div style="font-size:10px;color:#475569;margin-top:2px">974 leituras · 1–27 Jun</div>
+    </div>
+    <div style="background:#431407;border-radius:8px;padding:12px">
+      <div style="font-size:10px;color:#9a3412;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Estimativa fatura</div>
+      <div style="font-size:26px;font-weight:800;color:#fed7aa">~29 €</div>
+      <div style="font-size:10px;color:#9a3412;margin-top:2px">c/ IVA · PMOMIE estimado</div>
+    </div>
+    <div style="background:#0f172a;border-radius:8px;padding:12px">
+      <div style="font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Média diária</div>
+      <div style="font-size:26px;font-weight:800;color:#38bdf8">9,3 <span style="font-size:14px">kWh</span></div>
+      <div style="font-size:10px;color:#475569;margin-top:2px">≈ 1,08 €/dia</div>
+    </div>
+    <div style="background:#052e16;border-radius:8px;padding:12px">
+      <div style="font-size:10px;color:#166534;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Pico máximo</div>
+      <div style="font-size:26px;font-weight:800;color:#86efac">4,9 <span style="font-size:14px">kW</span></div>
+      <div style="font-size:10px;color:#166534;margin-top:2px">23 Jun · 18h45 · 71% potência</div>
+    </div>
+  </div>
+
+  <!-- Hourly bar chart -->
+  <div class="elec-detail" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div>
+      <div style="font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Perfil horário (kWh acumulado)</div>
+      <div style="font-size:10px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">00h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#3949ab;height:10px;border-radius:2px;width:30%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">7,6</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">06h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#3949ab;height:10px;border-radius:2px;width:16%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">4</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">08h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#fb8c00;height:10px;border-radius:2px;width:21%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">5,4</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">12h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#e53935;height:10px;border-radius:2px;width:49%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">12,4</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">13h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#e53935;height:10px;border-radius:2px;width:66%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">16,8</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">17h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#8e24aa;height:10px;border-radius:2px;width:80%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">20,3</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">18h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#8e24aa;height:10px;border-radius:2px;width:100%"></div></div><span style="width:40px;color:#e53935;text-align:right;font-weight:700">25,4▲</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">19h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#8e24aa;height:10px;border-radius:2px;width:88%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">22,4</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">20h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#8e24aa;height:10px;border-radius:2px;width:68%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">17,2</span></div><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><span style="width:24px;color:#475569;text-align:right;flex-shrink:0">23h</span><div style="flex:1;background:#1e293b;border-radius:2px;height:10px"><div style="background:#3949ab;height:10px;border-radius:2px;width:44%"></div></div><span style="width:40px;color:#94a3b8;text-align:right">11,2</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Análise</div>
+      <div style="font-size:11px;color:#cbd5e1;line-height:2">
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1e293b;padding:3px 0"><span>8h–22h (pico)</span><span style="color:#ef4444;font-weight:600">179,6 kWh · 73,8%</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #1e293b;padding:3px 0"><span>22h–8h (vazio)</span><span style="color:#3b82f6;font-weight:600">63,9 kWh · 26,2%</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #1e293b;padding:3px 0"><span>Jantar (17–20h)</span><span style="color:#a78bfa;font-weight:600">85 kWh · 35%</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #1e293b;padding:3px 0"><span>Dias úteis (20d)</span><span style="color:#cbd5e1">178,5 kWh · 8,9/dia</span></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #1e293b;padding:3px 0"><span>FDS (6d)</span><span style="color:#cbd5e1">65,0 kWh · 10,8/dia</span></div><div style="display:flex;justify-content:space-between;padding:3px 0"><span>Custo médio/kWh</span><span style="color:#86efac;font-weight:600">~0,119 € c/IVA</span></div>
+      </div>
+      <div style="margin-top:10px;font-size:10px;color:#475569;line-height:1.7">
+        Contrato: Ibelectra · Solução Família · 6,9 kVA<br>
+        Tarifa simples indexada OMIE · sem fidelização
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const ctx = document.getElementById('trendChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["2026-06-16", "2026-06-20", "2026-06-21", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-07-01", "2026-07-04", "2026-07-06"],
+    datasets: [
+      {
+        label: 'Recovery %',
+        data: [71.0, 32.0, 46.0, 63.0, 45.0, 72.0, 48.0, 47.0, 66.0, 68.0, 28.0, 26.0, 51.0, 80.0],
+        borderColor: '#22c55e',
+        backgroundColor: 'rgba(34,197,94,0.1)',
+        tension: 0.3,
+        fill: true,
+      },
+      {
+        label: 'Sono %',
+        data: [91.0, 91.0, 77.0, 56.0, 84.0, 78.0, 81.0, 69.0, 80.0, 85.0, 73.0, 79.0, 88.0, 79.0],
+        borderColor: '#38bdf8',
+        backgroundColor: 'rgba(56,189,248,0.05)',
+        tension: 0.3,
+      },
+      {
+        label: 'Stress',
+        data: [18.0, 26.0, 25.0, 22.0, 23.0, 21.0, 21.0, 29.0, 19.0, 20.0, 24.0, 28.0, 23.0, 15.0],
+        borderColor: '#fb923c',
+        backgroundColor: 'rgba(251,146,60,0.05)',
+        tension: 0.3,
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { labels: { color: '#94a3b8', font: { size: 12 } } } },
+    scales: {
+      x: { ticks: { color: '#475569', font: { size: 11 } }, grid: { color: '#1e293b' } },
+      y: { ticks: { color: '#475569' }, grid: { color: '#334155' }, min: 0, max: 100 }
+    }
+  }
+});
+</script>
+</body>
+</html>
