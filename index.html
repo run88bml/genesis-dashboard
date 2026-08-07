@@ -89,6 +89,7 @@
     .row { flex-direction: column; }
     .elec-metrics { grid-template-columns: repeat(2, 1fr) !important; }
     .elec-detail { grid-template-columns: 1fr !important; }
+    .kaizen-metrics { grid-template-columns: 1fr !important; }
     table { font-size: 11px; }
   }
 </style>
@@ -99,14 +100,14 @@
     <div style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:6px">Genesis · Painel operacional</div>
     <h1>Nuno Leitão</h1>
   </div>
-  <div style="text-align:right;font-size:11.5px;color:var(--text-3);line-height:1.6">07 Aug 2026 · 08:50<br>geração automática</div>
+  <div style="text-align:right;font-size:11.5px;color:var(--text-3);line-height:1.6">07 Aug 2026 · 11:35<br>geração automática</div>
 </header>
 
-<nav id="topnav"><a class="nav-link" href="#digest">Digest</a><a class="nav-link" href="#mba">MBA</a><a class="nav-link" href="#linkedin">LinkedIn</a><a class="nav-link" href="#training">Training</a><a class="nav-link" href="#wellness">Wellness</a><a class="nav-link" href="#devscout">Dev Scout</a><a class="nav-link" href="#electricidade">Eletricidade</a></nav>
+<nav id="topnav"><a class="nav-link" href="#digest">Digest</a><a class="nav-link" href="#mba">MBA</a><a class="nav-link" href="#linkedin">LinkedIn</a><a class="nav-link" href="#training">Training</a><a class="nav-link" href="#wellness">Wellness</a><a class="nav-link" href="#devscout">Dev Scout</a><a class="nav-link" href="#electricidade">Eletricidade</a><a class="nav-link" href="#kaizen">Sistema</a></nav>
 
 <!-- EXECUTIVE SUMMARY (KPI strip — apenas agrega dados já publicados abaixo) -->
 <section id="summary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px">
-  <div class="kpi"><div class="kpi-label">Recovery</div><div class="kpi-value"><span class="dot" style="background:#d6a243"></span>44<span class="kpi-unit">%</span></div><div class="kpi-sub">Amarelo</div></div><div class="kpi"><div class="kpi-label">Treino hoje</div><div class="kpi-value"><span class="dot" style="background:#d6a243"></span><span style="font-size:20px">AMARELO</span></div><div class="kpi-sub">easy run · 45 min</div></div><div class="kpi"><div class="kpi-label">Meia-maratona</div><div class="kpi-value">5 <span class="kpi-unit">sem</span></div><div class="kpi-sub">Porto · 13 Set · 37 dias</div></div><div class="kpi"><div class="kpi-label">Electricidade</div><div class="kpi-value">~29 <span class="kpi-unit">€</span></div><div class="kpi-sub">estimativa · Junho 2026</div></div>
+  <div class="kpi"><div class="kpi-label">Recovery</div><div class="kpi-value"><span class="dot" style="background:#d6a243"></span>44<span class="kpi-unit">%</span></div><div class="kpi-sub">Amarelo · dados 5 Ago</div></div><div class="kpi"><div class="kpi-label">Treino hoje</div><div class="kpi-value">—</div><div class="kpi-sub">sem recomendação</div></div><div class="kpi"><div class="kpi-label">Meia-maratona</div><div class="kpi-value">5 <span class="kpi-unit">sem</span></div><div class="kpi-sub">Porto · 13 Set · 37 dias</div></div><div class="kpi"><div class="kpi-label">Electricidade</div><div class="kpi-value">~29 <span class="kpi-unit">€</span></div><div class="kpi-sub">estimativa · Junho 2026</div></div><div class="kpi"><div class="kpi-label">Sistema</div><div class="kpi-value"><span class="dot" style="background:#4cc38a"></span>92<span class="kpi-unit">/100</span></div><div class="kpi-sub">kaizen · 7 Ago</div></div>
 </section>
 
 <!-- DAILY DIGEST -->
@@ -183,18 +184,7 @@
 <!-- TRAINING STATUS (big) -->
 <div class="card section" id="training">
   <h2>Training status</h2>
-  
-        <div class="panel" style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;padding:24px 28px">
-          <div>
-            <div class="subhead">Treino hoje</div>
-            <div style="font-size:36px;font-weight:800;letter-spacing:-.02em;color:#d6a243">AMARELO</div>
-          </div>
-          <div style="flex:1;min-width:200px">
-            <div style="font-size:18px;color:#e8edf5;font-weight:600">easy run</div>
-            <div style="font-size:14px;color:#9aa8bd;margin-top:4px">45 min · evening</div>
-            <div style="font-size:12.5px;color:#5d6b82;margin-top:10px;line-height:1.5">Recovery 44.0% | Sleep 78.0% (6.2h) | Stress 22.0 | HRV ?ms</div>
-          </div>
-        </div>
+  <div class="panel" style="padding:24px 28px;font-size:14px;color:#5d6b82">Sem recomendacao hoje. Corre: python3 scripts/wellness.py recommend</div>
   <div class="panel panel-accent" style="margin-top:14px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
     <div>
       <div class="subhead" style="margin-bottom:4px">Objetivo</div>
@@ -254,7 +244,7 @@
     </div>
     <div style="margin-bottom:6px;font-size:11px;color:#5d6b82;text-transform:uppercase;letter-spacing:.8px">Recovery</div>
     <div style="background:#0b1220;border:1px solid #1f2c44;border-radius:99px;height:8px;width:200px;display:inline-block;vertical-align:middle;overflow:hidden"><div style="background:#d6a243;height:8px;border-radius:99px;width:88px"></div></div>
-    
+    <div style="font-size:11px;color:#d6a243;margin-top:10px">Dados de 2026-08-05 — Garmin não sincronizou hoje</div>
   </div>
 
   <!-- TREND CHART -->
@@ -344,56 +334,6 @@
 <!-- Job scout intencionalmente ausente do dashboard público (privacy, 2026-07-12).
      Os relatórios continuam em Owners Inbox/Career/job-scout-*.md (local). -->
 
-<!-- DEVELOPMENT SCOUT (Diana, Mode 2) -->
-<div class="card section" id="devscout">
-  <h2 style="display:flex;justify-content:space-between;align-items:center">
-    <span>Development scout <span style="text-transform:none;letter-spacing:0;color:#5d6b82;font-weight:500">· cursos &amp; certificações</span></span>
-    <span class="freshness data-stale" title="2026-07-23 (15d)">scout: 23 Jul · há 15d</span>
-  </h2>
-  <div style="font-size:11px;color:#5d6b82;margin:-8px 0 16px">Cadência: Semanal</div>
-  <div class="panel panel-accent" style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
-    <div style="flex:1;min-width:240px">
-      <div class="subhead" style="color:#7ba4f2">Top pick</div>
-      <div style="font-size:16px;color:#e8edf5;font-weight:700;letter-spacing:-.01em">DeepLearning.AI — AI Agents / Generative AI track (cert via Coursera)</div>
-      <div style="font-size:12.5px;color:#c4cedd;line-height:1.55;margin-top:6px">Mais barato e rapido, duplo proposito: da capacidade de execucao para lancar o side project E reforca o posicionamento de AI strategy. Unico item que toca no pain &#x27;nao consigo lancar o side project&#x27;.</div>
-      <div style="font-size:11.5px;color:#9aa8bd;margin-top:10px">~45-55 EUR/mes (gratis em auditoria) · ~20-40h / 4-8 semanas</div>
-    </div>
-  </div>
-  <div style="margin-top:18px;overflow-x:auto">
-    <table>
-      <thead><tr><th style="text-align:center">#</th><th>Certificação</th><th>Custo</th><th>Esforço</th><th style="text-align:center">ROI</th><th>Recomendação</th></tr></thead>
-      <tbody>
-        <tr>
-          <td style="color:#5d6b82;text-align:center">1</td>
-          <td><a href="https://corporatefinanceinstitute.com/certifications/financial-modeling-valuation-analyst-fmva-program/" style="color:#7ba4f2;text-decoration:none" target="_blank" rel="noopener">FMVA — Financial Modeling &amp; Valuation Analyst (CFI)</a></td>
-          <td>~370-780 EUR/ano</td>
-          <td>~100-200h / 2-5 meses</td>
-          <td style="text-align:center"><span class="pill pill-pos">Alto</span></td>
-          <td style="font-size:11px;color:#5d6b82">Shortlist — inscrever so se pipeline inclinar para roles com budget ownership; nao correr em paralelo com PMP</td>
-        </tr>
-        <tr>
-          <td style="color:#5d6b82;text-align:center">2</td>
-          <td><a href="https://www.coursera.org/courses?query=deeplearning.ai" style="color:#7ba4f2;text-decoration:none" target="_blank" rel="noopener">DeepLearning.AI AI Agents / GenAI track (Coursera)</a></td>
-          <td>~45-55 EUR/mes</td>
-          <td>~20-40h / 4-8 semanas</td>
-          <td style="text-align:center"><span class="pill pill-pos">Alto</span></td>
-          <td style="font-size:11px;color:#5d6b82">Inscrever — comecar pelos short courses gratuitos ja; badge opcional</td>
-        </tr>
-        <tr>
-          <td style="color:#5d6b82;text-align:center">3</td>
-          <td><a href="https://www.coursera.org/specializations/effective-communication" style="color:#7ba4f2;text-decoration:none" target="_blank" rel="noopener">Effective Communication: Writing, Design &amp; Presentation (U. Colorado Boulder, Coursera)</a></td>
-          <td>~45-110 EUR total</td>
-          <td>~40-60h / 6-10 semanas</td>
-          <td style="text-align:center"><span class="pill pill-info">Medio</span></td>
-          <td style="font-size:11px;color:#5d6b82">Shortlist — juntar a mesma subscricao Coursera do #2; comprar pela skill, nao pelo badge</td>
-        </tr></tbody>
-    </table>
-  </div>
-  <div class="subhead" style="margin-top:18px">Sequenciação recomendada</div>
-  <ul style="list-style:none"><li style="font-size:12px;color:#c4cedd;margin-bottom:6px">1. PMP (do run anterior) continua a ser o badge #1 para a job search — nada aqui o substitui</li><li style="font-size:12px;color:#c4cedd;margin-bottom:6px">2. #2 AI e #3 Comunicacao sao baratos/rapidos e correm em paralelo com tudo — mesma subscricao Coursera</li><li style="font-size:12px;color:#c4cedd;margin-bottom:6px">3. #1 FMVA compete com PMP pelas mesmas horas — nao comecar os dois; decidir pelo tilt do pipeline</li></ul>
-  <div style="font-size:12px;color:#9aa8bd;margin-top:10px">Se só um: <strong style="color:#7ba4f2">DeepLearning.AI AI track (#2) — mais barato, mais rapido, duplo proposito, e o unico que resolve o pain do side project.</strong></div>
-  <div style="font-size:10px;color:#5d6b82;margin-top:12px">Análise completa: Owners Inbox/Career/development-scout-2026-07-23.md (repo genesis)</div>
-</div>
 
 <!-- ELECTRICIDADE -->
 <div class="card section" id="electricidade">
@@ -484,6 +424,39 @@
   </div>
 </div>
 
+<!-- SYSTEM HEALTH / KAIZEN -->
+<div class="card section" id="kaizen">
+  <h2 style="display:flex;justify-content:space-between;align-items:center">
+    <span>Sistema — Kaizen</span>
+    <span class="freshness" title="2026-08-07 (0d)">última revisão: 7 Ago · hoje</span>
+  </h2>
+  <div class="kaizen-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+    <div class="kpi">
+      <div class="kpi-label">Health score</div>
+      <div class="kpi-value" style="color:#4cc38a">
+        <span class="dot" style="background:#4cc38a"></span>92<span class="kpi-unit">/100</span>
+      </div>
+      <div class="kpi-sub"><span class="pill pill-warn">▼ -8</span> <span style="margin-left:4px">vs revisão anterior</span></div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Última revisão</div>
+      <div class="kpi-value" style="font-size:20px">7 Ago</div>
+      <div class="kpi-sub">0 falhas de agente (24h)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Melhorias propostas</div>
+      <div class="kpi-value">3</div>
+      <div class="kpi-sub">nesta revisão · detalhe no relatório</div>
+    </div>
+  </div>
+  <div style="margin-top:18px"><div class="subhead">Histórico (12 revisões)</div><canvas id="kaizenChart" height="58"></canvas></div>
+  <div style="margin-top:14px;font-size:10.5px;color:var(--text-4);line-height:1.6">
+    Revisão automática de saúde do sistema Genesis (integridade da BD, memória
+    obsoleta, precisão de retrieval, fiabilidade procedimental). O relatório
+    completo de cada revisão fica privado, fora deste painel.
+  </div>
+</div>
+
 <script>
 Chart.defaults.font.family = "'Inter', 'Segoe UI', sans-serif";
 const ctx = document.getElementById('trendChart').getContext('2d');
@@ -534,6 +507,36 @@ new Chart(ctx, {
     }
   }
 });
+
+const kzEl = document.getElementById('kaizenChart');
+if (kzEl) {
+  new Chart(kzEl.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: ["23 Mai", "26 Mai", "2 Jun", "5 Jun", "13 Jun", "16 Jun", "19 Jun", "22 Jun", "27 Jun", "1 Jul", "26 Jul", "7 Ago"],
+      datasets: [{
+        label: 'Health score',
+        data: [95, 100, 100, 96, 72, 97, 96, 100, 100, 87, 100, 92],
+        borderColor: '#5b8def',
+        backgroundColor: 'rgba(91,141,239,0.08)',
+        tension: 0.35,
+        fill: true,
+        borderWidth: 2,
+        pointRadius: 2,
+        pointHoverRadius: 4,
+        pointBackgroundColor: '#5b8def',
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#5d6b82', font: { size: 10 }, maxRotation: 0 }, grid: { display: false }, border: { color: '#1f2c44' } },
+        y: { ticks: { color: '#5d6b82', font: { size: 10 }, stepSize: 25 }, grid: { color: 'rgba(148,163,184,0.07)' }, border: { display: false }, min: 0, max: 100 }
+      }
+    }
+  });
+}
 </script>
 </body>
 </html>
